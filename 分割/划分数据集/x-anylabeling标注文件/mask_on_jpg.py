@@ -2,18 +2,23 @@ import os
 from PIL import Image
 import numpy as np
 
+## 其中 原图是后缀为 jpg 的图片，mask 为后缀为 png 的图片
+## 1.jpg 对应的 mask 的名称为 mask_1.png
+
 # 输入和输出目录
 image_dir = 'images/val2017'  # 原图文件夹
 mask_dir = 'masks'  # 生成的 mask 文件夹
 output_dir = 'overlay_images'  # 输出叠加图像的文件夹
 os.makedirs(output_dir, exist_ok=True)
 
+# 如何设置自动根据类别的数量，生成 color map
 # 根据类别生成不一样的随机颜色
 color_mapping = {
     1: (255, 0, 0),  # 类别1: 红色
     2: (0, 0, 255),  # 类别3: 蓝色
 }
 
+# mask图片 叠加到 原图 上
 # 遍历 mask 文件夹中的所有 mask 文件
 for mask_file in os.listdir(mask_dir):
     if mask_file.endswith('.png'):
