@@ -226,6 +226,10 @@ class VisionTransformer(nn.Module): # depth=12 指的在 transfomer encoder 中�
             这段代码用于构建Vision Transformer（ViT）的核心模块——由多个Transformer Encoder Block堆叠而成的序列。
             nn.Sequential容器将depth个相同结构的Block按顺序连接，形成深度网络。
             每个Block的 随机路径丢弃率（drop_path_ratio） 从0到drop_path_ratio线性递增，形成正则化强度随深度变化的机制。
+
+            每个Block模块里有 Attention 和 MLP 两个部分：
+            1. Attention：通过多头自注意力机制（Multi-Head Self-Attention）来捕捉输入序列中各个位置之间的关系。
+            2. MLP：通过多层感知机（Multi-Layer Perceptron）来进行非线性变换。
         '''
         dpr = [x.item() for x in torch.linspace(0, drop_path_ratio, depth)]  # stochastic depth decay rule
         self.blocks = nn.Sequential(*[
@@ -292,6 +296,10 @@ class VisionTransformer(nn.Module): # depth=12 指的在 transfomer encoder 中�
                 这个 token 是在输入图像块嵌入时添加的，用于分类任务。
                 通过将 [Class] token 的嵌入传递给预处理层（pre_logits），
                 可以得到一个新的嵌入表示，这个表示可以用于分类任务。
+
+                [CLS] token 在训练过程中通过梯度优化逐渐学习到整个数据集的统计特性，而非特定图像的局部特征。
+                单个 Patch Token 的自注意力权重通常更关注邻近区域或纹理细节（如边缘、颜色），而非全局语义。
+                例如， 的注意力热力图中，非 [CLS] token 的注意力分布呈现明显的局部性。
             '''
             return self.pre_logits(x[:, 0]) # [B, 768]
         else:
@@ -300,7 +308,7 @@ class VisionTransformer(nn.Module): # depth=12 指的在 transfomer encoder 中�
     def forward(self, x):
         x = self.forward_features(x)
         if self.head_dist is not None: 
-            x, x_dist = self.head(x[0]), self.head_dist(x[1]) # 这是什么意思？？？
+            x, x_dist = self.head(x[0]), self.head_dist(x[1])
             if self.training and not torch.jit.is_scripting():
                 # during inference, return the average of both classifier predictions
                 return x, x_dist
