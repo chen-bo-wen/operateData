@@ -4,6 +4,8 @@ from PIL import Image
 import os
 from shapely.geometry import Point, Polygon
 
+# 得到的是 灰度图像（没有什么颜色）
+
 # 输入和输出目录
 input_dir = 'jsons/val2017'
 output_dir = 'masks'
