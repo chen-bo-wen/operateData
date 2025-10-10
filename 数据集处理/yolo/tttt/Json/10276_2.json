@@ -1,0 +1,34 @@
+{
+  "version": "5.1.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "all_fish",
+      "points": [
+        [
+          920,
+          468
+        ],
+        [
+          1357,
+          468
+        ],
+        [
+          1357,
+          798
+        ],
+        [
+          920,
+          798
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    }
+  ],
+  "imagePath": "10276_2.png",
+  "imageData": null,
+  "imageHeight": 1242,
+  "imageWidth": 2208
+}

@@ -1,0 +1,106 @@
+{
+  "version": "5.1.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "all_fish",
+      "points": [
+        [
+          953,
+          509
+        ],
+        [
+          1406,
+          509
+        ],
+        [
+          1406,
+          680
+        ],
+        [
+          953,
+          680
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "all_fish",
+      "points": [
+        [
+          811,
+          700
+        ],
+        [
+          1239,
+          700
+        ],
+        [
+          1239,
+          862
+        ],
+        [
+          811,
+          862
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "all_fish",
+      "points": [
+        [
+          808,
+          846
+        ],
+        [
+          1244,
+          846
+        ],
+        [
+          1244,
+          1043
+        ],
+        [
+          808,
+          1043
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "all_fish",
+      "points": [
+        [
+          1576,
+          652
+        ],
+        [
+          2093,
+          652
+        ],
+        [
+          2093,
+          834
+        ],
+        [
+          1576,
+          834
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    }
+  ],
+  "imagePath": "10140_2.png",
+  "imageData": null,
+  "imageHeight": 1242,
+  "imageWidth": 2208
+}

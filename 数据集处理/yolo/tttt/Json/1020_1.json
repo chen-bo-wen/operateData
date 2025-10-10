@@ -1,0 +1,58 @@
+{
+  "version": "5.1.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "all_fish",
+      "points": [
+        [
+          1271,
+          711
+        ],
+        [
+          1805,
+          711
+        ],
+        [
+          1805,
+          960
+        ],
+        [
+          1271,
+          960
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "all_fish",
+      "points": [
+        [
+          1268,
+          922
+        ],
+        [
+          1820,
+          922
+        ],
+        [
+          1820,
+          1179
+        ],
+        [
+          1268,
+          1179
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    }
+  ],
+  "imagePath": "1020_1.png",
+  "imageData": null,
+  "imageHeight": 1242,
+  "imageWidth": 2208
+}
